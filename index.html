@@ -3,13 +3,27 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3815/3815533.png"/>
-	<img src="https://cdn-icons-png.flaticon.com/512/3815/3815533.png" width="100px"></p>
+  <img src="https://cdn-icons-png.flaticon.com/512/3815/3815533.png" width="100px"></p>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<body>
   <title>Assinatura T.I</title>
   <style>
   * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+	  @keyframes blink {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .loading-image {
+      width: 250px;
+      height: 200px;
+      animation: blink 2s infinite;
 
 body {
   background-image: linear-gradient(rgb(243, 32, 32));
