@@ -4,17 +4,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3815/3815533.png"/>
   <img src="https://cdn-icons-png.flaticon.com/512/3815/3815533.png" width="100px"></p>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-<body>
-  <title>Assinatura T.I</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-  * {
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-	  .loading-overlay {
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-image: linear-gradient(rgb(243, 32, 32));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 150vh;
+      background-color: #404458f6;
+      border-width: 2px;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      transition: background-color 0.5s ease;
+      opacity: 1;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    main {
+      background-color: rgba(9, 2, 27, 0.541);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 380px;
+      padding: 15px;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    p {
+      color: #e8e9f1;
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    .bt {
+      color: #e8e9f1;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .ass {
+      background-color: rgb(252, 252, 252);
+      border-width: 3px;
+      border-style: groove;
+      border-color: rgb(250, 10, 10);
+    }
+
+    label {
+      color: rgb(238, 231, 231);
+      display: block;
+      font-size: 14px;
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: white;
+      font-size: 20px;
+    }
+
+    h1 {
+      color: rgb(238, 226, 226);
+      font-size: 30px;
+    }
+
+    input {
+      color: rgb(175, 9, 9);
+      border-width: 2px;
+      border-radius: 5px;
+      border-style: solid;
+      border-color: rgba(248, 236, 236, 0);
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+    }
+
+    .glow-on-hover {
+      width: 350px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #f3e9e9;
+      background: #f00f0f;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:before {
+      content: '';
+      background: linear-gradient(45deg, #3c47e6, #1b27cc, #283ea0, #2a4b88, #5772c9, #002bff, #205db8, #2f3f9b, #1a1dd6);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+      color: #160303
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #da0d0d;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+	@keyframes blink {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .loading-image {
+      width: 100px;
+      height: 100px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 40% 0 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    /* CSS para o fundo de carregamento */
+    .loading-overlay {
       position: fixed;
       top: 0;
       left: 0;
@@ -39,186 +195,36 @@
       width: 100px;
       height: 100px;
     }
-	  @keyframes blink {
-      0% { opacity: 0; }
-      50% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
-    .loading-image {
-      width: 250px;
-      height: 200px;
-      animation: blink 2s infinite;
-
-body {
-  background-image: linear-gradient(rgb(243, 32, 32));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 150vh;
-  background-color: #404458f6;
-  border-width: 2px;
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  transition: background-color 0.5s ease;
-  opacity: 1;
-}
-
-
-
-
-
-
-.hidden {
-  display: none;
-}
-
-
-main {
-  background-color: rgba(9, 2, 27, 0.541);
-  border-radius: 10px;
-  width: 100%;
-  max-width: 380px;
-  padding: 15px;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-p {
-  color: #e8e9f1;
-  font-size: 15px;
-  text-align: justify;
-}
-
-.bt {
-  color: #e8e9f1;
-  font-size: 13px;
-  text-align: center;
-}
-
-.ass {
-  background-color: rgb(252, 252, 252);
-  border-width: 3px;
-  border-style: groove;
-  border-color: rgb(250, 10, 10);
-}
-
-label {
-  color: rgb(238, 231, 231);
-  display: block;
-  font-size: 14px;
-  display: inline-block;
-  width: 100px;
-  margin-bottom: 5px;
-}
-
-h2 {
-  color: white;
-  font-size: 20px;
-}
-
-h1 {
-  color: rgb(238, 226, 226);
-  font-size: 30px;
-}
-
-input {
-  color: rgb(175, 9, 9);
-  border-width: 2px;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: rgba(248, 236, 236, 0);
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-}
-
-.glow-on-hover {
-  width: 350px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #f3e9e9;
-  background: #f00f0f;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
-
-.glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #3c47e6, #1b27cc, #283ea0, #2a4b88, #5772c9, #002bff, #205db8, #2f3f9b, #1a1dd6);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-.glow-on-hover:active {
-  color: #160303
-}
-
-.glow-on-hover:active:after {
-  background: transparent;
-}
-
-.glow-on-hover:hover:before {
-  opacity: 1;
-}
-
-.glow-on-hover:after {
-  z-index: -1;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #da0d0d;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 40% 0 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-
-
-
   </style>
   <script>
     function checkLogin() {
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
-      
+      var loadingOverlay = document.getElementById("loading-overlay");
+
       // Verificar se o login e a senha estão corretos
-      if (username === "suporte.ti" && password === "suporte123") {
-        // Redirecionar para a próxima página
-        window.location.href = "index2.html";
+      if (username === "suporte.ti" && password === "shibata") {
+        // Exibir o overlay de carregamento
+        loadingOverlay.classList.add("active");
+
+        // Redirecionar para a próxima página após 2 segundos (simulando carregamento)
+        setTimeout(function () {
+          window.location.href = "index.html";
+        }, 2000);
       } else {
         alert("Login ou senha incorretos. Tente novamente.");
       }
     }
   </script>
-</head>
+
+  
+  <!-- Overlay de carregamento -->
+  <div id="loading-overlay" class="loading-overlay">
+    <img src="https://storage.googleapis.com/ecdt-logo-saida/198c627abda509a8f1c443fd74c8ed837a5c405be00acf6aac078c228aaf81cb/SUPERMERCADO-SHIBATA-LTDA.webp" class="loading-image">
+  </div>
+</body>
+</html>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
@@ -239,4 +245,6 @@ input {
   <div><img src="https://redespsm.com.br/wp-content/uploads/2016/05/logo-shibata-supermercados.png" width="180px"></div>
 </body>
 </html>
+
+
 
