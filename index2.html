@@ -389,20 +389,15 @@
 
 		
 		  };
+		      function exibirFraseAdicional() {
+			const selectElement = document.getElementById('selecao-input');
+			const fraseAdicionalElement = document.getElementById('frase-adicional');
+			const selectedOption = selectElement.value;
+			
+			fraseAdicionalElement.textContent = frases[selectedOption] || '';
+		  }
 
-			function limparInputs() {
-			var selects = document.querySelectorAll('select');
-			var input = document.getElementById('input');
 
-			for (var i = 0; i < selects.length; i++) {
-				selects[i].selectedIndex = -1;
-			}
-
-			if (input) {
-				input.value = '';
-			}
-			}
-	
 		  
 		  function limparInputs() {
   var inputs = document.querySelectorAll('input, select');
